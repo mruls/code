@@ -51,7 +51,7 @@ impl Code {
         }
     }
 
-    pub fn message_en(&self) -> String {
+    pub fn message(&self) -> String {
         match *self {
             Code::Succ => String::from("OK"),
             Code::BadRequest => String::from("bad request"),
