@@ -10,6 +10,7 @@ pub enum Code {
     BadID,
     BadNumber,
     NotFound,
+    DuplicateRecord,
 
     // authorization
     Unauthorized,
@@ -39,6 +40,7 @@ impl Code {
             Code::BadNumber => 13,
             Code::NotFound => -14,
             Code::NotExist => -15,
+            Code::DuplicateRecord => -16,
             Code::Unauthorized => -40,
             Code::InvalidToken => -41,
             Code::IncorrectPasswd => -42,
@@ -60,6 +62,9 @@ impl Code {
             Code::BadID => String::from("incorrect id"),
             Code::BadNumber => String::from("invalid number parameters"),
             Code::NotFound => String::from("404 Not Found"),
+            Code::DuplicateRecord => {
+                String::from("duplicate record, some columns need to be unique")
+            }
             Code::NotExist => String::from("data not exist"),
             Code::Unauthorized => String::from("not authorized"),
             Code::InvalidToken => String::from("invalid token or token timeout"),
